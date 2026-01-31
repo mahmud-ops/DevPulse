@@ -1,9 +1,13 @@
-import PageHeading from "../components/PageHeading"
+import PageHeading from "../components/PageHeading";
+import ProjectCards from "../components/ProjectCard";
 
 const ProjectPage = () => {
   return (
-    <PageHeading title="Projects"/>
-  )
-}
+    <>
+      <PageHeading title="Projects" />
+      <ProjectCards />
+    </>
+  );
+};
 
-export default ProjectPage
+export default ProjectPage;
