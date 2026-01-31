@@ -1,12 +1,12 @@
 import {
   Text,
-  VStack,
   Card,
   CardHeader,
   HStack,
   Heading,
   Badge,
   CardBody,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { projects } from "../fakeDB";
 import { Link } from "react-router-dom";
@@ -26,11 +26,14 @@ export const getStatusColor = (status: string) => {
 
 const ProjectCards = () => {
   return (
-    <VStack spacing={4} align="stretch">
+    <SimpleGrid spacing={4} columns={{
+        base: 1,
+        md: 2,
+        lg:3
+    }}>
       {projects.map((p) => (
-        <Link to={`/projects/${p.id}`}>
+        <Link to={`/projects/${p.id}`} key={p.id}>
           <Card
-            key={p.id}
             borderRadius="xl"
             _hover={{ shadow: "md", transform: "translateY(-2px)" }}
             transition="all 0.2s ease"
@@ -53,7 +56,7 @@ const ProjectCards = () => {
           </Card>
         </Link>
       ))}
-    </VStack>
+    </SimpleGrid>
   );
 };
 
