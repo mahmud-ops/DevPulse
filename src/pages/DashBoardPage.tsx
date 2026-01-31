@@ -1,7 +1,8 @@
+import PageHeading from "../components/PageHeading"
 
 const DashBoardPage = () => {
   return (
-    <div>DashBoardPage</div>
+    <PageHeading title="Dashboard" />
   )
 }
 

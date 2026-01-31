@@ -1,7 +1,8 @@
+import PageHeading from "../components/PageHeading"
 
 const ProjectPage = () => {
   return (
-    <div>ProjectPage</div>
+    <PageHeading title="Projects"/>
   )
 }
 

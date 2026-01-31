@@ -1,7 +1,12 @@
+import { useParams } from "react-router-dom"
+import PageHeading from "../components/PageHeading"
 
 const ProjectDetailsPage = () => {
+
+  const {id} = useParams();
+
   return (
-    <div>ProjectDetailsPage</div>
+    <PageHeading title={`Project ${id}`} subtitle="Project details and activity" />
   )
 }
 

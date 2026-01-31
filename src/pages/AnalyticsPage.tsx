@@ -1,7 +1,8 @@
+import PageHeading from "../components/PageHeading"
 
 const AnalyticsPage = () => {
   return (  
-    <div>AnalyticsPage</div>
+    <PageHeading title="Analytics"/>
   )
 }
 

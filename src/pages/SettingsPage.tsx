@@ -1,7 +1,8 @@
+import PageHeading from "../components/PageHeading"
 
 const SettingsPage = () => {
   return (
-    <div>SettingsPage</div>
+    <PageHeading title="Projects" />
   )
 }
 
