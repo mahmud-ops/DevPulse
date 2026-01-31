@@ -14,7 +14,7 @@ const Sidebar = () => {
   const location = useLocation(); // current URL
 
   return (
-    <VStack align="stretch" w="240px" spacing={2} p={2} bg="gray.800">
+    <VStack align="stretch" w="240px" spacing={2} p={2}>
       {items.map((i) => (
         <SidebarItem
           key={i.url}

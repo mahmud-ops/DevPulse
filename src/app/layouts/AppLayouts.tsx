@@ -1,6 +1,7 @@
 import { Grid, Box } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
+import TopBar from "../../components/TopBar";
 
 const AppLayouts = () => {
   return (
@@ -14,7 +15,7 @@ const AppLayouts = () => {
       height="100vh"
     >
       <Box gridArea="topbar" p={4}>
-        TopBar
+        <TopBar />
       </Box>
       <Box gridArea="sidebar" p={4} display={{ base: "none", md: "block" }}>
         <Sidebar />
