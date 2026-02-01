@@ -2,7 +2,7 @@ import PageHeading from "../components/PageHeading"
 
 const SettingsPage = () => {
   return (
-    <PageHeading title="Projects" />
+    <PageHeading title="Settings" />
   )
 }
 

@@ -1,12 +1,17 @@
 import { HStack, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { MdSearch } from "react-icons/md";
 
-const SearchInput = () => {
+interface Props {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+const SearchInput = ({ value, onChange }: Props) => {
   return (
     <HStack
       w={{
         base: "90%",
-        md: "60%",
+        md: "40%",
       }}
     >
       <InputGroup>
@@ -15,12 +20,8 @@ const SearchInput = () => {
         </InputLeftElement>
 
         <Input
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              console.log(e.currentTarget.value);
-            }
-          }}
-          
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           type="text"
           placeholder="Search project"
           variant="filled"
