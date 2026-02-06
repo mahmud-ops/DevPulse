@@ -5,7 +5,6 @@ export const projects: Project[] = [
     id: 1,
     name: "Portfolio Website",
     status: "Completed",
-    last_updated: "3 days ago",
     tag: "Personal",
     recent_actions: [
       { message: "Finalize project section", date: "12/12/2025" },
@@ -17,7 +16,6 @@ export const projects: Project[] = [
     id: 2,
     name: "Client CRM System",
     status: "Active",
-    last_updated: "Today",
     tag: "Client",
     recent_actions: [
       { message: "Add customer analytics", date: "30/01/2026" },
@@ -29,7 +27,6 @@ export const projects: Project[] = [
     id: 3,
     name: "React Learning Hub",
     status: "Completed",
-    last_updated: "1 week ago",
     tag: "Learning",
     recent_actions: [
       { message: "Complete hooks module", date: "24/01/2026" },
@@ -41,7 +38,6 @@ export const projects: Project[] = [
     id: 4,
     name: "Client Auth System",
     status: "Paused",
-    last_updated: "2 weeks ago",
     tag: "Client",
     recent_actions: [
       { message: "JWT implementation", date: "17/01/2026" },
@@ -53,7 +49,6 @@ export const projects: Project[] = [
     id: 5,
     name: "Learning REST APIs",
     status: "Completed",
-    last_updated: "4 days ago",
     tag: "Learning",
     recent_actions: [
       { message: "CRUD endpoints", date: "27/01/2026" },
@@ -65,7 +60,6 @@ export const projects: Project[] = [
     id: 6,
     name: "Personal Task Tracker",
     status: "Completed",
-    last_updated: "1 month ago",
     tag: "Personal",
     recent_actions: [
       { message: "Task creation flow", date: "01/12/2025" },
@@ -77,7 +71,6 @@ export const projects: Project[] = [
     id: 7,
     name: "Client Landing Page",
     status: "Completed",
-    last_updated: "2 months ago",
     tag: "Client",
     recent_actions: [
       { message: "SEO optimization", date: "10/11/2025" },
@@ -89,7 +82,6 @@ export const projects: Project[] = [
     id: 8,
     name: "JavaScript Deep Dive",
     status: "Active",
-    last_updated: "Yesterday",
     tag: "Learning",
     recent_actions: [
       { message: "Async/await practice", date: "31/01/2026" },
@@ -101,7 +93,6 @@ export const projects: Project[] = [
     id: 9,
     name: "Personal Blog Platform",
     status: "Paused",
-    last_updated: "3 weeks ago",
     tag: "Personal",
     recent_actions: [
       { message: "Draft markdown support", date: "09/01/2026" },
@@ -113,7 +104,6 @@ export const projects: Project[] = [
     id: 10,
     name: "Client E-commerce Site",
     status: "Active",
-    last_updated: "Today",
     tag: "Client",
     recent_actions: [
       { message: "Cart logic", date: "01/02/2026" },
@@ -125,7 +115,6 @@ export const projects: Project[] = [
     id: 11,
     name: "TypeScript Practice",
     status: "Completed",
-    last_updated: "5 days ago",
     tag: "Learning",
     recent_actions: [
       { message: "Utility types", date: "26/01/2026" },
@@ -137,7 +126,6 @@ export const projects: Project[] = [
     id: 12,
     name: "Personal Finance Tracker",
     status: "Active",
-    last_updated: "2 days ago",
     tag: "Personal",
     recent_actions: [
       { message: "Expense categories", date: "30/01/2026" },
@@ -149,7 +137,6 @@ export const projects: Project[] = [
     id: 13,
     name: "Client Admin Panel",
     status: "Paused",
-    last_updated: "1 month ago",
     tag: "Client",
     recent_actions: [
       { message: "Role permissions", date: "02/01/2026" },
@@ -161,7 +148,6 @@ export const projects: Project[] = [
     id: 14,
     name: "Learning Algorithms",
     status: "Active",
-    last_updated: "Yesterday",
     tag: "Learning",
     recent_actions: [
       { message: "Binary search", date: "31/01/2026" },
@@ -173,7 +159,6 @@ export const projects: Project[] = [
     id: 15,
     name: "Personal Notes App",
     status: "Completed",
-    last_updated: "2 weeks ago",
     tag: "Personal",
     recent_actions: [
       { message: "Search notes", date: "18/01/2026" },
@@ -185,7 +170,6 @@ export const projects: Project[] = [
     id: 16,
     name: "Client Booking System",
     status: "Active",
-    last_updated: "Today",
     tag: "Client",
     recent_actions: [
       { message: "Calendar view", date: "01/02/2026" },
@@ -197,7 +181,6 @@ export const projects: Project[] = [
     id: 17,
     name: "Learning Git & GitHub",
     status: "Completed",
-    last_updated: "1 month ago",
     tag: "Learning",
     recent_actions: [
       { message: "Rebase practice", date: "05/01/2026" },
@@ -209,7 +192,6 @@ export const projects: Project[] = [
     id: 18,
     name: "Personal Habit Tracker",
     status: "Paused",
-    last_updated: "3 weeks ago",
     tag: "Personal",
     recent_actions: [
       { message: "Streak logic", date: "10/01/2026" },
@@ -221,7 +203,6 @@ export const projects: Project[] = [
     id: 19,
     name: "Client Analytics Dashboard",
     status: "Active",
-    last_updated: "Yesterday",
     tag: "Client",
     recent_actions: [
       { message: "Charts optimization", date: "31/01/2026" },
@@ -233,7 +214,6 @@ export const projects: Project[] = [
     id: 20,
     name: "Learning System Design",
     status: "Active",
-    last_updated: "Today",
     tag: "Learning",
     recent_actions: [
       { message: "Scalability notes", date: "01/02/2026" },
@@ -242,3 +222,9 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+// 🔥 derive last_updated safely
+export const projectsWithLastUpdated = projects.map((p) => ({
+  ...p,
+  last_updated: p.recent_actions[0]?.date ?? "N/A",
+}));

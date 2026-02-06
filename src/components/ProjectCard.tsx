@@ -46,7 +46,7 @@ const ProjectCard = ({ project }: Props) => {
           <HStack spacing={3}>
             <Badge variant="subtle">{project.tag}</Badge>
             <Text fontSize="sm" color="gray.500">
-              Updated {project.last_updated}
+              Updated on {project.recent_actions[0]?.date ?? "N/A"}
             </Text>
           </HStack>
         </CardBody>

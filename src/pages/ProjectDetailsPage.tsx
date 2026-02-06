@@ -53,7 +53,7 @@ const ProjectDetailsPage = () => {
       </Text>
 
       <Text mb={2} color={"gray.600"}>
-        Last updated {project.last_updated}
+        Last updated on {project.recent_actions[0]?.date ?? "N/A"}
       </Text>
 
       <ExpandibleText>
