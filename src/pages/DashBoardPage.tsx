@@ -8,6 +8,7 @@ import {
 import PageHeading from "../components/PageHeading";
 import StatsCard from "../components/StatsCard";
 import { projects } from "../fakeDB";
+import CountUp from "react-countup";
 
 const DashBoardPage = () => {
   const totalProjects = projects.length;
@@ -21,12 +22,14 @@ const DashBoardPage = () => {
     <>
       <PageHeading title="Dashboard" />
 
-      <SimpleGrid columns={{base: 1,md: 4}}>
-        <GridItem colSpan={{
-          base: 1,
-          md: 4,
-          lg:3
-        }}>
+      <SimpleGrid columns={{ base: 1, md: 4 }}>
+        <GridItem
+          colSpan={{
+            base: 1,
+            md: 4,
+            lg: 3,
+          }}
+        >
           <SimpleGrid
             columns={{
               base: 1,
@@ -38,22 +41,22 @@ const DashBoardPage = () => {
             <StatsCard
               icon={<MdFolder size={35} />}
               title="Total projects"
-              value={totalProjects}
+              value={<CountUp end={totalProjects} duration={5} />}
             />
             <StatsCard
               icon={<MdPlayCircle size={35} />}
               title="Active projects"
-              value={activeProjects}
+              value={<CountUp end={activeProjects} duration={5} />}
             />
             <StatsCard
               icon={<MdCheckCircle size={35} />}
               title="Completed projects"
-              value={completedProjects}
-            />
+              value={<CountUp end={completedProjects} duration={5} />}
+              />
             <StatsCard
               icon={<MdPauseCircle size={35} />}
               title="Paused projects"
-              value={pausedProjects}
+              value={<CountUp end={pausedProjects} duration={5} />}
             />
           </SimpleGrid>
         </GridItem>
