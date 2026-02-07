@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import AppLayouts from "../app/layouts/AppLayouts";
 import LoginPage from "../pages/LoginPage";
 import AnalyticsPage from "../pages/AnalyticsPage";
@@ -16,9 +16,10 @@ const appRouter = createBrowserRouter([
         path: '/',
         element: <AppLayouts />,
         children: [
-            {path: 'analytics', element: <AnalyticsPage />},
+            { index: true, element: <Navigate to="/dashboard" replace /> },
             {path: 'dashboard', element: <DashBoardPage />},
             {path: 'projects', element: <ProjectPage />},
+            {path: 'analytics', element: <AnalyticsPage />},
             {path: 'projects/:id', element: <ProjectDetailsPage />},
             {path: 'settings', element: <SettingsPage />}
         ]
