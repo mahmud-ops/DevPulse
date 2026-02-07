@@ -222,9 +222,3 @@ export const projects: Project[] = [
     ],
   },
 ];
-
-// 🔥 derive last_updated safely
-export const projectsWithLastUpdated = projects.map((p) => ({
-  ...p,
-  last_updated: p.recent_actions[0]?.date ?? "N/A",
-}));

@@ -1,4 +1,4 @@
-import { GridItem, SimpleGrid } from "@chakra-ui/react";
+import { Box, GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import {
   MdCheckCircle,
   MdFolder,
@@ -9,6 +9,7 @@ import PageHeading from "../components/PageHeading";
 import StatsCard from "../components/StatsCard";
 import { projects } from "../fakeDB";
 import CountUp from "react-countup";
+import RecentActivities from "../components/Recent_activities";
 
 const DashBoardPage = () => {
   const totalProjects = projects.length;
@@ -52,13 +53,22 @@ const DashBoardPage = () => {
               icon={<MdCheckCircle size={35} />}
               title="Completed projects"
               value={<CountUp end={completedProjects} duration={5} />}
-              />
+            />
             <StatsCard
               icon={<MdPauseCircle size={35} />}
               title="Paused projects"
               value={<CountUp end={pausedProjects} duration={5} />}
             />
           </SimpleGrid>
+        </GridItem>
+
+        {/* recent_actions */}
+        <GridItem colSpan={1} mx={2}>
+          <Heading size={"lg"}>Recent actions</Heading>
+          <Box mt={2} height={"60vh"} overflow={"auto"}>
+            <hr />
+            <RecentActivities />
+          </Box>
         </GridItem>
       </SimpleGrid>
     </>

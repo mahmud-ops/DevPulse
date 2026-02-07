@@ -1,6 +1,7 @@
-interface Action {
+export interface Action {
     message: string
     date: string
+    projectId?: number
 }
 
 export default interface Project {
