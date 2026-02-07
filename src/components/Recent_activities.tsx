@@ -1,4 +1,4 @@
-import { Box, Card, color, Heading, VStack } from "@chakra-ui/react";
+import { Box, Card, Heading, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useRecentAction from "../hooks/useRecentAction";
 import { projects } from "../fakeDB";
